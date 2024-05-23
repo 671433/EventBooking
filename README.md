@@ -1,2 +1,2 @@
 # EventBooking
-A webset for events 
+Website to search for events 
