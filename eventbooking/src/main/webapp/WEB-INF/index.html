@@ -1,0 +1,39 @@
+!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/simple.css">
+<title>Event Booking</title>
+</head>
+<body>
+	<nav>
+		<div class="nav1">
+			<h2>Eventbooking</h2>
+			<form action="${pageContext.request.contextPath}/arrangement">
+				<button class="navB" type="submit">Registrer</button>
+			</form>
+
+			<a href="${pageContext.request.contextPath}/sokeside">
+				<button class="navB">Søk</button>
+			</a> <a
+				href="${pageContext.request.contextPath}/sokeside/minearrangement">
+				<button class="navB">Mine arrangement</button>
+			</a>
+		</div>
+		<div class="logginnut">
+		<c:if test="${navn != null}">
+			<p class="innloggetNavn">Velkommen, ${navn}</p>
+		</c:if>
+			<% if( LoginUtil.erBrukerInnlogget(session) ) { %>
+			<form action="logout" method="post">
+				<button  type="submit"class="navB">Logg ut</button>
+			</form>
+			<% } else { %>
+			<a href="/login"><button class="navB">Logg På</button></a>
+			<% } %>
+		</div>
+			
+	</nav>
+
+</body>
+</html>
